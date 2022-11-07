@@ -6,8 +6,7 @@
 
         <title>Laravel</title>
              
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/script.js"></script>
+        <link rel="stylesheet" href="/css/style.css">        
     </head>
     <body class="antialiased">
         <h1 id="title">Algum titulo</h1>
@@ -26,5 +25,7 @@
         @elseif($nome == "fulano")
             <p>Conversando com fulano</p>
         @endif
+
+        <script src="/js/script.js"></script>
     </body>
 </html>
