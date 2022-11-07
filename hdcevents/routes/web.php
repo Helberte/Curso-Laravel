@@ -23,7 +23,7 @@ Route::get('/', function () {
                             "idade" => $idade,
                             "profissao" => $profissao,
                             "estadoCivil" => $estadoCivil]);
-                            
+
     // passando dados para o template engine
     // para o html através da rota, usa-se um array nomeado
 
@@ -33,7 +33,19 @@ Route::get('/', function () {
 }); 
 
 Route::get("/contact", function(){
-    return view('contact');
+
+    $contacts = ["Helberte",
+                "Nicareli",
+                "Gabriela",
+                "Everdin",
+                "Fulano",
+                "Beltrano",
+                "Sicrano",
+                "Dizimano",
+                "Noventano",
+                "Almerano"];
+
+    return view('contact', ["contatos" => $contacts]);
 });
 
 Route::get("/produtos", function(){
