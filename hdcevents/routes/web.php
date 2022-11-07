@@ -14,5 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $nome = "Helberte";
+    $idade = 24;
+    $profissao = "Programador";
+    $estadoCivil = "Solteiro";
+
+    return view('welcome', ["nome" => $nome,
+                            "idade" => $idade,
+                            "profissao" => $profissao,
+                            "estadoCivil" => $estadoCivil]);
+                            
+    // passando dados para o template engine
+    // para o html através da rota, usa-se um array nomeado
+
+    // para imprimir esta variável lá no html usamos dois parenteses e o nome da variável
+
+    // {{ $nome }}
+}); 
+
+Route::get("/contact", function(){
+    return view('contact');
+});
+
+Route::get("/produtos", function(){
+    return view('products');
 });
