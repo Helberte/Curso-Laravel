@@ -18,6 +18,10 @@
     <!-- css da aplicação -->
     <link rel="stylesheet" href="/css/style.css"> 
     
+    <!-- icones -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
   </head>
   <body class="antialiased">
       
@@ -32,7 +36,7 @@
               <a href="/" class="nav-link">Eventos</a>
             </li>
             <li class="nav-item">
-              <a href="/" class="nav-link">Criar Eventos</a>
+              <a href="/events/create" class="nav-link">Criar Eventos</a>
             </li>
             <li class="nav-item">
               <a href="/" class="nav-link">Entrar</a>

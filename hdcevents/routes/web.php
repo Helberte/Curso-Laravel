@@ -13,44 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $nome = "Helberte";
-    $idade = 24;
-    $profissao = "Programador";
-    $estadoCivil = "Solteiro";
+// preciso indicar que estou usando aquela action index do controller EventController
+// 1° preciso importar o controller
 
-    return view('welcome', ["nome" => $nome,
-                            "idade" => $idade,
-                            "profissao" => $profissao,
-                            "estadoCivil" => $estadoCivil]);
+use App\Http\Controllers\EventController;
 
-    // passando dados para o template engine
-    // para o html através da rota, usa-se um array nomeado
+Route::get('/', [EventController::class, 'index']); 
+Route::get('/events/create', [EventController::class, 'create']);
+Route::get("/contact", [EventController::class, 'contatos']);
+Route::get("/produtos", [EventController::class, 'produtos']);
 
-    // para imprimir esta variável lá no html usamos dois parenteses e o nome da variável
 
-    // {{ $nome }}
-}); 
 
-Route::get("/contact", function(){
 
-    $contacts = ["Helberte",
-                "Nicareli",
-                "Gabriela",
-                "Everdin",
-                "Fulano",
-                "Beltrano",
-                "Sicrano",
-                "Dizimano",
-                "Noventano",
-                "Almerano"];
 
-    return view('contact', ["contatos" => $contacts]);
-});
 
-Route::get("/produtos", function(){
-    return view('products');
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 // parametro obrigatório
 Route::get("/produtos_param/{id}", function($id){
@@ -71,3 +66,5 @@ Route::get('/produtos_param_query', function(){
     return view('return_param', ["busca" => $busca,
                                  "sobrenome" => $sobrenome]);
 });
+
+*/
