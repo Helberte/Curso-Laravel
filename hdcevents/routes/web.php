@@ -51,3 +51,23 @@ Route::get("/contact", function(){
 Route::get("/produtos", function(){
     return view('products');
 });
+
+// parametro obrigatório
+Route::get("/produtos_param/{id}", function($id){
+    return view('produto_param', ['id' => $id]);
+});
+
+// parametro opcional
+Route::get("/produtos_param_opc/{id?}", function($id = null){
+    return view('produto_param', ['id' => $id]);
+});
+
+// query parameters
+Route::get('/produtos_param_query', function(){
+
+    $busca = request('busca');
+    $sobrenome = request('sobrenome');
+
+    return view('return_param', ["busca" => $busca,
+                                 "sobrenome" => $sobrenome]);
+});
