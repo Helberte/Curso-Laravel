@@ -20,5 +20,6 @@
     @elseif($nome == "fulano")
         <p>Conversando com fulano</p>
     @endif
-    
+
+    <script src="/js/script.js" defer></script>          
 @endsection
