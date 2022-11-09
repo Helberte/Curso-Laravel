@@ -4,22 +4,17 @@
 
 @section('content')
 
-    <h1 id="title">Meu primeiro projeto laravel</h1>
+@foreach($events as $evento)
 
-    <img src="/img/banner.jpg" alt="banner">
-
-    @if(10 > 5)
-        <p>A condição é verdadeira</p>
+<p>Título: {{ $evento->title }}, Descrição: {{ $evento->description }}, Cidade: {{ $evento->city }}, Aberto ao público: 
+    @if($evento->private == 1)
+        Não
+    @else
+        Sim
     @endif
 
-    <p>Meu nome é {{ $nome }}</p>
+</p>
 
-    @if($nome == "Helberte")
-        <p>Estamos conversando com o {{ $nome }}</p>
-        <p>Ele é {{ $estadoCivil }} mas está namorando e tem {{ $idade }} anos de idade, trabalha como {{ $profissao }}</p>
-    @elseif($nome == "fulano")
-        <p>Conversando com fulano</p>
-    @endif
-
-    <script src="/js/script.js" defer></script>          
+@endforeach
+              
 @endsection

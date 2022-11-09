@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;
+
 class EventController extends Controller
 {
     // conhecido como action
     public function index(){
-        $nome = "Helberte";
-        $idade = 24;
-        $profissao = "Programador";
-        $estadoCivil = "Solteiro";
 
-        return view('welcome', ["nome" => $nome,
-                            "idade" => $idade,
-                            "profissao" => $profissao,
-                            "estadoCivil" => $estadoCivil]);
+        // pega todos os eventos da tabela events 
+        $events = Event::all();
+
+        return view('welcome', ["events" => $events]);
+
+        // $nome = "Helberte";
+        // $idade = 24;
+        // $profissao = "Programador";
+        // $estadoCivil = "Solteiro";
+
+        // return view('welcome', ["nome" => $nome,
+        //                     "idade" => $idade,
+        //                     "profissao" => $profissao,
+        //                     "estadoCivil" => $estadoCivil]);
 
         // passando dados para o template engine
         // para o html através da rota, usa-se um array nomeado
