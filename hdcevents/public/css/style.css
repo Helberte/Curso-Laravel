@@ -82,10 +82,12 @@ h1{
 }
 #events-container{
   /* display: flex; */
+  align-items: center;
 }
 #events-container .card{
   flex: 1 1 0;
   max-width: 25%;
+  min-width: 20vw;
   border-radius: 10px;
   padding: 0;
   margin: 5px;
@@ -115,6 +117,26 @@ h1{
   color: #757575;
 }
 
+/* Form criar event */
+
+.form-group label{
+  margin: 15px 0 8px;
+}
+.form-create-event .btn-primary{
+  margin-top: 15px;
+}
+
+#event-create-container{
+  padding: 30px;
+}
+#event-create-container label{
+  font-weight: bold;
+}
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea{
+  font-size: 15px;
+}
 /* footer */
 
 footer{
@@ -129,3 +151,4 @@ footer{
 footer p{
   margin: 0;
 }
+
