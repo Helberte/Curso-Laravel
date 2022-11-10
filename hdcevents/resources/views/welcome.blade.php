@@ -4,17 +4,31 @@
 
 @section('content')
 
-@foreach($events as $evento)
+<div id="search-container" class="col-md-12">
+    <h1>Busque o evento</h1>
 
-<p>Título: {{ $evento->title }}, Descrição: {{ $evento->description }}, Cidade: {{ $evento->city }}, Aberto ao público: 
-    @if($evento->private == 1)
-        Não
-    @else
-        Sim
-    @endif
+    <form action="#">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
+    </form>
+</div>
+<div id="events-container" class="col-md-12">
+    <h2>Próximos eventos</h2>
+    <p class="subtitle">Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
 
-</p>
+        @foreach($events as $evento)
+            <div class="card col-md-3">
+                <img src="/img/event_placeholder.jpg" alt="{{ $evento->title }}">
 
-@endforeach
-              
+                <div class="card-body">
+                    <p class="card-date">10/09/2022</p>
+                    <h5 class="card-title">{{ $evento->title }}</h5>
+                    <p class="card-participants">39 Participantes</p>
+                    <a href="#" class="btn btn-primary">Saber mais</a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+  
 @endsection
