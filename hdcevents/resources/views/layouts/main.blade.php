@@ -50,13 +50,25 @@
     </header>
     {{-- QUAL É A ÁREA DO CONTEÚDO? DEFINIMOS ATRAVÉS DO: --}}
 
-    @yield('content')
+   
+    <main>
+      <div id="container-msg" class="container-fluid">
+        <div class="row">
+          @if(session('msg'))
+            <p id="msg" class="msg">{{ session('msg') }}</p>
+         
+          @endif
+          @yield('content')
+        </div>
+      </div>
+    </main>
 
     {{-- O BLADE SUBSTITUI O YIELD PELO CONTEÚDO --}}
 
     <footer>
       <p>HDC Events &copy; 2022</p>           
     </footer>
-    
+
+    <script src="/js/script.js" defer></script>
   </body>
 </html>
