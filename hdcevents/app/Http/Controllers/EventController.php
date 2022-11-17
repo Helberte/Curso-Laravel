@@ -11,10 +11,22 @@ class EventController extends Controller
     // conhecido como action
     public function index(){
 
-        // pega todos os eventos da tabela events 
-        $events = Event::all();
+        $search = request('search');
 
-        return view('welcome', ["events" => $events]);
+        if($search)
+        {
+            $events = Event::where([
+                ['title', 'like', '%'. $search.'%']
+            ])->get();
+
+        }else{
+            // pega todos os eventos da tabela events 
+            $events = Event::all();
+        }
+        
+
+        return view('welcome', ["events" => $events,
+                                "search" => $search]);
 
         // $nome = "Helberte";
         // $idade = 24;

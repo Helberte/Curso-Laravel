@@ -105,7 +105,8 @@ h1{
   transition: all ease .2s;
 }
 #events-container .card:hover{
-  transform: scale(1.05);
+  transform: scale(1.003);
+  box-shadow: -3px 7px 13px 0.5px #e2e2e2;
 }
 #events-container img{
   max-height: 150px;
@@ -132,6 +133,9 @@ h1{
   padding: 0;
   margin: 0;
   font-size: 30px;
+}
+#ver-todos{
+  text-decoration: none;
 }
 
 /* Form criar event */
