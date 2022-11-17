@@ -149,6 +149,22 @@ h1{
 #event-create-container textarea{
   font-size: 15px;
 }
+
+/* ---------- informações evento */
+
+#info-events{
+  display: flex;
+  flex-direction: column;
+}
+.info-events-column-1{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
 /* footer */
 
 footer{

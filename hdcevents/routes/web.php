@@ -21,9 +21,12 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']); 
 Route::get('/events/create', [EventController::class, 'create']);
 Route::get("/contact", [EventController::class, 'contatos']);
+Route::get('/events/{id}',[EventController::class, 'show']);
 Route::get("/produtos", [EventController::class, 'produtos']);
 
 Route::post('/events', [EventController::class, "store"]);
+// action store comumente utilizado para enviar os dados para o 
+// banco de dados
 
 
 

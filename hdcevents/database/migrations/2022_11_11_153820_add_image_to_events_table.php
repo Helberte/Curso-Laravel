@@ -14,7 +14,7 @@ class AddImageToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->string('image', 5000);
+            $table->string('image', 5000)->nullable();
         });
     }
 

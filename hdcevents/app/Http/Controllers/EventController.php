@@ -64,7 +64,7 @@ class EventController extends Controller
          $event->city = $request->city;
          $event->private = $request->private;
          $event->description = $request->description;
-
+         $mensagem_imagem_inexistente = "";
         // image Upload
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
@@ -76,11 +76,21 @@ class EventController extends Controller
             $requestImage->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
+        }else{
+            $mensagem_imagem_inexistente = "Não foi possível carregar a imagem.";
         }
 
 
          $event->save();
 
-         return redirect('/')->with('msg', "Evento criado com sucesso!");
+         return redirect('/')->with('msg', "Evento criado com sucesso! ${mensagem_imagem_inexistente}");
+    }
+
+    public function show($id){
+        $event = Event::findOrFail($id);
+        // busca um registro no banco de dados apenas, o do id
+        // caso não encontre, será retornado um error
+
+        return view('events.show',["event" => $event]);
     }
 }
