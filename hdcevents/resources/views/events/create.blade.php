@@ -18,6 +18,10 @@
       <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento" required>
     </div>
     <div class="form-group">
+      <label for="date">Data do Evento:</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="form-group">
       <label for="city">Cidade:</label>
       <input type="text" class="form-control" id="city" name="city" placeholder="Nome da cidade" required>
     </div>
@@ -33,22 +37,31 @@
       <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?" required></textarea>
     </div>
     
-    <div class="form-group">
-      <label for="itens-infra">Adicione itens de infraestrutura:</label>
+    <div id="list-infra" class="form-group">
+      <label>Adicione itens de infraestrutura:</label>
       <div class="form-group">
-        <input type="checkbox" name="items[]" value="Cadeiras">Cadeiras
+        <input type="checkbox" name="items[]" value="Cadeiras" id="cad"> 
+        <label for="cad">Cadeiras</label> 
       </div>
       <div class="form-group">
-        <input type="checkbox" name="items[]" value="Palco">Palco
+        <input type="checkbox" name="items[]" value="Palco" id="palco">
+        <label for="palco">Palco</label> 
       </div>
       <div class="form-group">
-        <input type="checkbox" name="items[]" value="Cerveja grátis">Cerveja grátis
+        <input type="checkbox" name="items[]" value="Cerveja grátis" id="cerveja"> 
+        <label for="cerveja">Cerveja grátis</label> 
       </div>
       <div class="form-group">
-        <input type="checkbox" name="items[]" value="Open Food">Open Food
+        <input type="checkbox" name="items[]" value="Open Food" id="open"> 
+        <label for="open">Open Food</label> 
       </div>
       <div class="form-group">
-        <input type="checkbox" name="items[]" value="Brindes">Brindes
+        <input type="checkbox" name="items[]" value="Brindes" id="brinde"> 
+        <label for="brinde">Brindes</label> 
+      </div>
+      <div class="form-group">
+        <input type="checkbox" name="items[]" value="Nenhum" id="nenhum"> 
+        <label for="nenhum">Nenhum</label> 
       </div>
     </div>
 

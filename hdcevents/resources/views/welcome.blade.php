@@ -16,18 +16,22 @@
     <p class="subtitle">Veja os eventos dos próximos dias</p>
     <div id="cards-container" class="row">
 
+    @if(count($events) == 0)
+        <p id="info-events-home">Não há eventos disponíveis.</p>
+    @else
         @foreach($events as $evento)
             <div class="card col-md-3">
                 <img src="/img/events/{{ $evento->image }}" alt="{{ $evento->title }}">
-
+                    
                 <div class="card-body">
-                    <p class="card-date">10/09/2022</p>
+                    <p class="card-date">{{ date('d/m/Y', strtotime($evento->date)) }}</p>
                     <h5 class="card-title">{{ $evento->title }}</h5>
                     <p class="card-participants">39 Participantes</p>
                     <a href="/events/{{ $evento->id }}" class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
         @endforeach
+    @endif
     </div>
 </div>
   
