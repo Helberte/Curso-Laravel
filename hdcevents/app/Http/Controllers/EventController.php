@@ -58,13 +58,15 @@ class EventController extends Controller
     }
 
     public function store(Request $request){
-         $event = new Event;
+        $event = new Event;
 
-         $event->title = $request->title;
-         $event->city = $request->city;
-         $event->private = $request->private;
-         $event->description = $request->description;
-         $mensagem_imagem_inexistente = "";
+        $event->title = $request->title;
+        $event->city = $request->city;
+        $event->private = $request->private;
+        $event->description = $request->description;
+        $event->items = $request->items;
+
+        $mensagem_imagem_inexistente = "";
         // image Upload
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
