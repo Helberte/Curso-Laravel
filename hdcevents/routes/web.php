@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// preciso indicar que estou usando aquela action index do controller EventController
-// 1° preciso importar o controller
-
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']); 
@@ -28,51 +25,6 @@ Route::post('/events', [EventController::class, "store"]);
 // action store comumente utilizado para enviar os dados para o 
 // banco de dados
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-// parametro obrigatório
-Route::get("/produtos_param/{id}", function($id){
-    return view('produto_param', ['id' => $id]);
-});
-
-// parametro opcional
-Route::get("/produtos_param_opc/{id?}", function($id = null){
-    return view('produto_param', ['id' => $id]);
-});
-
-// query parameters
-Route::get('/produtos_param_query', function(){
-
-    $busca = request('busca');
-    $sobrenome = request('sobrenome');
-
-    return view('return_param', ["busca" => $busca,
-                                 "sobrenome" => $sobrenome]);
-});
-
-*/
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

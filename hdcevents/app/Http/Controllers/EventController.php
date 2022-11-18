@@ -25,7 +25,7 @@ class EventController extends Controller
         }
         
 
-        return view('welcome', ["events" => $events,
+        return view('home', ["events" => $events,
                                 "search" => $search]);
 
         // $nome = "Helberte";
