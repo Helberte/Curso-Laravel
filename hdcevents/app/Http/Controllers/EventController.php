@@ -87,7 +87,7 @@ class EventController extends Controller
 
             $extension = $requestImage->extension();
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-       
+
             $requestImage->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
@@ -95,10 +95,12 @@ class EventController extends Controller
             $mensagem_imagem_inexistente = "Não foi possível carregar a imagem.";
         }
 
+        $user = auth()->user(); // dá acesso ao usuário logado
+        $event->user_id = $user->id;
 
-         $event->save();
+        $event->save();
 
-         return redirect('/')->with('msg', "Evento criado com sucesso! ${mensagem_imagem_inexistente}");
+        return redirect('/')->with('msg', "Evento criado com sucesso! " . $mensagem_imagem_inexistente);
     }
 
     public function show($id){
